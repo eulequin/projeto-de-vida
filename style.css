@@ -36,7 +36,7 @@ body {
 }
 
 .botao {
-  font-family: "Crakra Petch", sans-serif;
+  font-family: "Chakra Petch", sans-serif; /* Corrigido: era "Crakra Petch" */
   background-color: var(--botao-inativo);
   color: var(--branco);
   display: flex;
@@ -49,6 +49,7 @@ body {
   border-left: 2px solid var(--botao-ativo);
   border-right: 2px solid var(--botao-ativo);
   border-top: none;
+  cursor: pointer; /* Opcional: Transforma o cursor em "mãozinha" ao passar o mouse */
 }
 
 .botao:first-child {
@@ -57,44 +58,44 @@ body {
 
 .botoes {
   display: block;
+  width: 100%; /* Adicionado para garantir o alinhamento correto */
 }
 
 @media screen and (min-width: 768px) {
   /* Código omitido */
-
   .botao:first-child {
     border-radius: 40px 0 0 0;
   }
 }
 
-
-.ativo {
-  background-color: var(--botao-ativo);
-  border-bottom: 4px solid var(--verde);
+/* Esconde todas as abas de texto por padrão */
+.aba-conteudo {
+  display: none;
 }
 
-.abas-textos {
-  background-color: var(--texto-fundo);
+/* Mostra apenas a aba que tiver a classe .ativo */
+.aba-conteudo.ativo {
+  display: block;
+}
+
+/* Estilo do botão ativo */
+.botao.ativo {
+  background-color: var(--botao-ativo);
+  border-bottom: 4px solid var(--verde);
 }
 
 .abas-textos {
   background-color: var(--texto-fundo);
   padding: 40px;
   border-radius: 0 0 40px 40px;
-}
-
-.botao.ativo {
-  background-color: var(--botao-ativo);
-  border-bottom: 4px solid var(--verde);
-}
-.aba-conteudo.ativo {
-  display: block;
+  width: 100%; /* Adicionado para alinhar com os botões */
 }
 
 .aba-conteudo-titulo-principal {
   font-size: 28px;
   text-align: center;
 }
+
 .aba-conteudo-titulo-secundario {
   text-align: center;
   color: var(--verde);
